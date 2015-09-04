@@ -157,7 +157,7 @@
 				composer.addPass( new THREE.RenderPass( scene, camera ) );
 
 				glitchPass = new THREE.GlitchPass();
-				glitchPass.goWild= false;
+				glitchPass.goWild= true;
 				glitchPass.renderToScreen = true;
 
 				composer.addPass( glitchPass );
