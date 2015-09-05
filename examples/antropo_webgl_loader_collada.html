@@ -44,6 +44,7 @@
 			<!-- postprocessing / glitch -->
 		<script src="js/shaders/CopyShader.js"></script>
 		<script src="js/shaders/DigitalGlitch.js"></script>
+
 		<script src="js/postprocessing/EffectComposer.js"></script>
 		<script src="js/postprocessing/RenderPass.js"></script>
 		<script src="js/postprocessing/MaskPass.js"></script>
@@ -130,12 +131,12 @@
 
 				scene.add( dae );
 
-				particleLight = new THREE.Mesh( new THREE.SphereGeometry( 4, 8, 8 ), new THREE.MeshBasicMaterial( { color: 0x000000 } ) );
+				particleLight = new THREE.Mesh( new THREE.SphereGeometry( 4, 8, 8 ), new THREE.MeshBasicMaterial( { color: 0x00FF00 } ) );
 				scene.add( particleLight );
 
 				// Lights
 
-				scene.add( new THREE.AmbientLight( 0x008800 ) );
+				scene.add( new THREE.AmbientLight( 0x00ff00 ) );
 
 				var directionalLight = new THREE.DirectionalLight(/*Math.random() * 0xffffff*/0xff00ff );
 				directionalLight.position.x = Math.random() - 0.5;
@@ -157,7 +158,7 @@
 				composer.addPass( new THREE.RenderPass( scene, camera ) );
 
 				glitchPass = new THREE.GlitchPass();
-				glitchPass.goWild= true;
+				glitchPass.goWild= false;
 				glitchPass.renderToScreen = true;
 
 				composer.addPass( glitchPass );
@@ -244,7 +245,7 @@
 
 			
 
-				camera.position.x += ( mouseX - camera.position.x ) * 0.1;
+				camera.position.x += ( mouseX - camera.position.x ) * 0.0005;
 				//camera.position.z += ( - mouseY + camera.position.y ) * 0.1;
 				camera.lookAt( scene.position );
 
