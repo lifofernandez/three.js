@@ -73,7 +73,7 @@
 
 			var loader = new THREE.ColladaLoader();
 			loader.options.convertUpAxis = true;
-			loader.load( './model/A2.dae', function ( collada ) {
+			loader.load( './model/A3.dae', function ( collada ) {
 
 				dae = collada.scene;
 
@@ -117,17 +117,17 @@
 				
 				// Lights
 
-				scene.add( new THREE.AmbientLight( 0xFFFFFF ) );
+				//scene.add( new THREE.AmbientLight( 0xFFFFFF ) );
 
-				//var directionalLight = new THREE.DirectionalLight(0xFF000 );
+				var directionalLight = new THREE.DirectionalLight(0xFF000 );
 				// directionalLight.position.x = Math.random() - 0.5;
 				// directionalLight.position.y = Math.random() - 0.5;
 				// directionalLight.position.z = Math.random() - 0.5;
-				//  directionalLight.position.x =  1000001;
-				//  directionalLight.position.y =  0.01;
-				//  directionalLight.position.z = 0.005;
-				// // directionalLight.position.normalize();
-				// scene.add( directionalLight );
+				directionalLight.position.x =  1;
+				directionalLight.position.y =  0.01;
+				directionalLight.position.z = 0.005;
+				directionalLight.position.normalize();
+				scene.add( directionalLight );
 
 				// var pointLight = new THREE.PointLight( 0xffffff, 10 );
 				// particleLight.add( pointLight );
