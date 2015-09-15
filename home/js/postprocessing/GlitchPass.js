@@ -50,7 +50,7 @@ THREE.GlitchPass.prototype = {
 		
 		if (this.curF % this.randX == 0 || this.goWild == true)
 		{
-			this.uniforms[ 'amount' ].value = Math.random() / 70;
+			this.uniforms[ 'amount' ].value = Math.random() / 90;
 			this.uniforms[ 'angle' ].value = THREE.Math.randFloat(-Math.PI/2, Math.PI/2);
 			this.uniforms[ 'seed_x' ].value = THREE.Math.randFloat(-0.1, 0.1);
 			this.uniforms[ 'seed_y' ].value = THREE.Math.randFloat(-0.1, 0.1);

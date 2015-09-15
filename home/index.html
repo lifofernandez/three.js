@@ -20,7 +20,7 @@
 				text-align: center;
 				z-index: 100;
 				display:block;
-				opacity: 0.5;
+				opacity: 0.8;
 
 			}
 
@@ -73,7 +73,7 @@
 
 			var loader = new THREE.ColladaLoader();
 			loader.options.convertUpAxis = true;
-			loader.load( './model/A.dae', function ( collada ) {
+			loader.load( './model/A2.dae', function ( collada ) {
 
 				dae = collada.scene;
 
@@ -88,7 +88,7 @@
 
 				} );
 
-				dae.scale.x = dae.scale.y = dae.scale.z = 3;
+				dae.scale.x = dae.scale.y = dae.scale.z = 1;
 				dae.updateMatrix();
 
 				init();
@@ -102,7 +102,7 @@
 				document.body.appendChild( container );
 
 				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
-				camera.position.set( 7, 1, 1 );
+				camera.position.set( 1, 0, 5 );
 
 				scene = new THREE.Scene();
 
@@ -117,17 +117,17 @@
 				
 				// Lights
 
-				//scene.add( new THREE.AmbientLight( 0xFFFFFF ) );
+				scene.add( new THREE.AmbientLight( 0xFFFFFF ) );
 
-				var directionalLight = new THREE.DirectionalLight(/*Math.random() * 0xffffff*/0xFFFFFF );
+				//var directionalLight = new THREE.DirectionalLight(0xFF000 );
 				// directionalLight.position.x = Math.random() - 0.5;
 				// directionalLight.position.y = Math.random() - 0.5;
 				// directionalLight.position.z = Math.random() - 0.5;
-				directionalLight.position.x =  0.1;
-				directionalLight.position.y =  0.01;
-				directionalLight.position.z = 0.005;
-				directionalLight.position.normalize();
-				scene.add( directionalLight );
+				//  directionalLight.position.x =  1000001;
+				//  directionalLight.position.y =  0.01;
+				//  directionalLight.position.z = 0.005;
+				// // directionalLight.position.normalize();
+				// scene.add( directionalLight );
 
 				// var pointLight = new THREE.PointLight( 0xffffff, 10 );
 				// particleLight.add( pointLight );
@@ -227,8 +227,8 @@
 				var timer = Date.now() * 0.0005;
 
 				if(click)camera.position.y = Math.cos( timer ) * 10;
-				if(!click)camera.position.y = 3;
-				camera.position.z = Math.sin( 1 ) * 8;
+				if(!click)camera.position.y = 10;
+				camera.position.z = Math.sin( 1 ) * 7;
 
 				// camera.lookAt( scene.position );
 
