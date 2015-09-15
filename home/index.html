@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -102,7 +103,7 @@
 				document.body.appendChild( container );
 
 				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
-				camera.position.set( 1, 10, 1111 );
+				camera.position.set( 1, 0, 5 );
 
 				scene = new THREE.Scene();
 
@@ -123,8 +124,8 @@
 				// directionalLight.position.x = Math.random() - 0.5;
 				// directionalLight.position.y = Math.random() - 0.5;
 				// directionalLight.position.z = Math.random() - 0.5;
-				directionalLight.position.x =  0;
-				directionalLight.position.y =  1;
+				directionalLight.position.x =  1;
+				directionalLight.position.y =  0.01;
 				directionalLight.position.z = 0.005;
 				directionalLight.position.normalize();
 				scene.add( directionalLight );
@@ -226,7 +227,7 @@
 			function render() {
 				var timer = Date.now() * 0.0005;
 
-				if(click)camera.position.y = Math.cos( timer ) * 1;
+				if(click)camera.position.y = Math.cos( timer ) * 10;
 				if(!click)camera.position.y = 10;
 				camera.position.z = Math.sin( 1 ) * 7;
 
@@ -234,7 +235,7 @@
 
 			
 
-				camera.position.x += ( mouseX - camera.position.x ) * 0.0005;
+				camera.position.x += ( mouseX - camera.position.x ) * 0.0008;
 				//camera.position.z += ( - mouseY + camera.position.y ) * 0.1;
 				camera.lookAt( dae.position );
 
